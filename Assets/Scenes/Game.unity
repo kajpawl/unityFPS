@@ -121,6 +121,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &133012661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 133012662}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &133012662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133012661}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.236}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1503909538}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &289487766
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,6 +240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 352119699}
   - component: {fileID: 352119701}
+  - component: {fileID: 352119702}
   - component: {fileID: 352119698}
   - component: {fileID: 352119697}
   - component: {fileID: 352119696}
@@ -330,6 +361,26 @@ MonoBehaviour:
   lookSensitivity: 5
   maxLookX: 80
   minLookX: -80
+--- !u!114 &352119702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352119695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74edd5d393a9bd8449ac1d372ad4da80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 3492030264914847727, guid: 7b6c7f4cae49e9843a540fc10f74b807,
+    type: 3}
+  muzzle: {fileID: 133012662}
+  curAmmo: 40
+  maxAmmo: 40
+  infiniteAmmo: 0
+  bulletSpeed: 20
+  shootRate: 0.3
 --- !u!1 &432032065
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,6 +626,7 @@ Transform:
   m_Children:
   - {fileID: 1781890913}
   - {fileID: 289487767}
+  - {fileID: 133012662}
   m_Father: {fileID: 2065097739}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

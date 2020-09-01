@@ -16,12 +16,17 @@ public class Player : MonoBehaviour
 
     private Camera cam;
     private Rigidbody rig;
+    private Weapon weapon;
 
     void Awake()
     {
         // get the components
         cam = Camera.main;
         rig = GetComponent<Rigidbody>();
+        weapon = GetComponent<Weapon>();
+
+        // disable cursor
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
@@ -30,6 +35,12 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
             TryJump();
+
+        if (Input.GetButton("Fire1"))
+        {
+            if (weapon.CanShoot())
+                weapon.Shoot();
+        }
 
         CamLook();
     }
