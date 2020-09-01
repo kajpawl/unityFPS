@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Stats")]
+    public int curHp;
+    public int maxHp;
+
     [Header("Movement")]
     public float moveSpeed;             // movement speed in units per second
     public float jumpForce;             // force applied upwards
@@ -75,11 +79,26 @@ public class Player : MonoBehaviour
         transform.eulerAngles += Vector3.up * y;
     }
 
+    // called when we press the 'jump' button
     void TryJump()
     {
         Ray ray = new Ray(transform.position, Vector3.down);
 
+        // shoot a raycast down and if it hits something - jump
         if (Physics.Raycast(ray, 1.1f))
             rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        curHp -= damage;
+
+        if (curHp <= 0)
+            Die();
+    }
+
+    void Die()
+    {
+
     }
 }

@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 352119700}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -357,8 +357,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16fc7d7f3de5e914f82484c0faca36ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curHp: 0
+  maxHp: 0
   moveSpeed: 6
-  jumpForce: 4
+  jumpForce: 5
   lookSensitivity: 5
   maxLookX: 80
   minLookX: -80
@@ -634,7 +636,7 @@ GameObject:
   - component: {fileID: 812544807}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
