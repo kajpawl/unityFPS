@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
         rotX += Input.GetAxis("Mouse Y") * lookSensitivity;
 
         // clamp the vertical rotation
-        Mathf.Clamp(rotX, minLookX, maxLookX);
+        rotX = Mathf.Clamp(rotX, minLookX, maxLookX);
 
         // rotate the camera and player
         cam.transform.localRotation = Quaternion.Euler(-rotX, 0, 0);

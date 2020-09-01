@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.4
+    agentRadius: 0.5
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -114,7 +114,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.13333334
+    cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -379,8 +379,8 @@ MonoBehaviour:
   curAmmo: 40
   maxAmmo: 40
   infiniteAmmo: 0
-  bulletSpeed: 20
-  shootRate: 0.3
+  bulletSpeed: 30
+  shootRate: 0.45
 --- !u!114 &352119703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -628,6 +628,7 @@ GameObject:
   - component: {fileID: 812544810}
   - component: {fileID: 812544811}
   - component: {fileID: 812544812}
+  - component: {fileID: 812544813}
   - component: {fileID: 812544809}
   - component: {fileID: 812544808}
   - component: {fileID: 812544807}
@@ -731,8 +732,8 @@ MonoBehaviour:
   curAmmo: 0
   maxAmmo: 0
   infiniteAmmo: 1
-  bulletSpeed: 10
-  shootRate: 0.4
+  bulletSpeed: 20
+  shootRate: 0.5
 --- !u!114 &812544812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,6 +749,24 @@ MonoBehaviour:
   objPrefab: {fileID: 3492030264914847727, guid: 7b6c7f4cae49e9843a540fc10f74b807,
     type: 3}
   createOnStart: 5
+--- !u!114 &812544813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812544806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41856cfd18c0c34c842bdaf99aec175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curHp: 10
+  maxHp: 10
+  scoreToGive: 10
+  moveSpeed: 3
+  attackRange: 5
+  yPathOffset: 0.9
 --- !u!1 &913102236
 GameObject:
   m_ObjectHideFlags: 0
