@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
     public float lifetime;      // how long until the bullet despawns>
     private float shootTime;    // time the bullet was shot
 
+    public GameObject hitParticle;
+
     void OnEnable()
     {
         shootTime = Time.time;
@@ -27,6 +29,10 @@ public class Bullet : MonoBehaviour
             other.GetComponent<Player>().TakeDamage(damage);
         else if (other.CompareTag("Enemy"))
             other.GetComponent<Enemy>().TakeDamage(damage);
+
+        // create the hit particle
+        GameObject obj = Instantiate(hitParticle, transform.position, Quaternion.identity);
+        Destroy(obj, 0.6f);
 
         // disable the bullet
         gameObject.SetActive(false);
