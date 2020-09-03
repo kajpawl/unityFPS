@@ -202,7 +202,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 12362062}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 518951935}
+        m_MethodName: OnRestartButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &12362062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,7 +650,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 297503922}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 518951935}
+        m_MethodName: OnMenuButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &297503922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -849,7 +871,7 @@ Transform:
   m_Children:
   - {fileID: 2065097739}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &352119700
 Rigidbody:
@@ -900,11 +922,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPool: {fileID: 352119703}
   muzzle: {fileID: 133012662}
-  curAmmo: 60
-  maxAmmo: 60
+  curAmmo: 40
+  maxAmmo: 40
   infiniteAmmo: 0
   bulletSpeed: 30
-  shootRate: 0.45
+  shootRate: 0.35
 --- !u!114 &352119703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1010,7 +1032,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &445000593
 GameObject:
@@ -1046,7 +1068,7 @@ Transform:
   - {fileID: 781566851}
   - {fileID: 1122252244}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &494732304
 GameObject:
@@ -1112,6 +1134,72 @@ MonoBehaviour:
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!1 &518951934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 518951936}
+  - component: {fileID: 518951937}
+  - component: {fileID: 518951935}
+  m_Layer: 0
+  m_Name: _GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &518951935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518951934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccc2a64d7397237478491bb406473a1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1560170082}
+  ammoText: {fileID: 1764419807}
+  healthBarFill: {fileID: 1543451085}
+  pauseMenu: {fileID: 42388876}
+  endGameScreen: {fileID: 1358872044}
+  endGameHeaderText: {fileID: 793411369}
+  endGameScoreText: {fileID: 1841832874}
+--- !u!4 &518951936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518951934}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 316.70367, y: 224.40714, z: -7.977904}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &518951937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518951934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1578a5533e86076488650ed124dc85f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreToWin: 50
+  curScore: 0
+  gamePaused: 0
 --- !u!1 &544997154
 GameObject:
   m_ObjectHideFlags: 0
@@ -6330,7 +6418,7 @@ Transform:
   m_Children:
   - {fileID: 2011582304}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &812544811
 MonoBehaviour:
@@ -6480,7 +6568,7 @@ RectTransform:
   - {fileID: 1358872045}
   - {fileID: 42388877}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6763,7 +6851,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &927421328
 GameObject:
@@ -7816,7 +7904,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1630523926}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 518951935}
+        m_MethodName: OnMenuButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1630523926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8182,7 +8281,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ammo: 60/60'
+  m_text: 'Ammo: 40/40'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13548,7 +13647,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2016891645}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 518951935}
+        m_MethodName: OnResumeButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2016891645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13751,7 +13861,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2100167092}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 518951935}
+        m_MethodName: OnRestartButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2100167092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13849,7 +13970,7 @@ PrefabInstance:
     - target: {fileID: 6912074683225567237, guid: eb22a8e7df9b34d40a9c250e9a78d527,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6912074683225567237, guid: eb22a8e7df9b34d40a9c250e9a78d527,
         type: 3}
@@ -13913,7 +14034,7 @@ PrefabInstance:
     - target: {fileID: 7389634238619906558, guid: fd6567210d348c54fb98899f922a20e3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7389634238619906558, guid: fd6567210d348c54fb98899f922a20e3,
         type: 3}

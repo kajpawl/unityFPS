@@ -58,16 +58,19 @@ public class GameUI : MonoBehaviour
         endGameScoreText.text = "<b>Score</b>\n" + score; 
     }
 
+    // called when we press the "Resume" button
     public void OnResumeButton()
     {
-
+        GameManager.instance.TogglePauseGame();
     }
 
+    // called when we press the "Restart" button
     public void OnRestartButton()
     {
         SceneManager.LoadScene("Game");
     }
 
+    // called when we press the "Menu" button
     public void OnMenuButton()
     {
         SceneManager.LoadScene("Menu");

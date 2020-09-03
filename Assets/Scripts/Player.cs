@@ -89,26 +89,36 @@ public class Player : MonoBehaviour
             rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
+    // called when we get hit by a bullet
     public void TakeDamage(int damage)
     {
         curHp -= damage;
+
+        GameUI.instance.UpdateHealthBar(curHp, maxHp);
 
         if (curHp <= 0)
             Die();
     }
 
+    // called when our health reaches 0
     void Die()
     {
 
     }
 
+    // called when the player is given health
     public void GiveHealth(int amountToGive)
     {
         curHp = Mathf.Clamp(curHp + amountToGive, 0, maxHp);
+
+        GameUI.instance.UpdateHealthBar(curHp, maxHp);
     }
 
+    // called when the player is given ammo
     public void GiveAmmo(int amountToGive)
     {
         weapon.curAmmo = Mathf.Clamp(weapon.curAmmo + amountToGive, 0, weapon.maxAmmo);
+
+        GameUI.instance.UpdateAmmoText(weapon.curAmmo, weapon.maxAmmo);
     }
 }
