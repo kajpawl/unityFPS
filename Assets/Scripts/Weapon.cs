@@ -17,11 +17,16 @@ public class Weapon : MonoBehaviour
     private float lastShootTime;        // last time we shot a bullet
     private bool isPlayer;              // are we the player's weapon
 
+    public AudioClip shootSfx;
+    private AudioSource audioSource;
+
     void Awake()
     {
         // are we attached to the player?
         if (GetComponent<Player>())
             isPlayer = true;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // can we shoot a bullet?
@@ -44,6 +49,8 @@ public class Weapon : MonoBehaviour
 
         if (isPlayer)
             GameUI.instance.UpdateAmmoText(curAmmo, maxAmmo);
+
+        audioSource.PlayOneShot(shootSfx);
 
         GameObject bullet = bulletPool.GetObject();
 
