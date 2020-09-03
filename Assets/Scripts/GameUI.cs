@@ -9,17 +9,17 @@ using UnityEditor.PackageManager;
 public class GameUI : MonoBehaviour
 {
     [Header("HUD")]
-    public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI ammoText;
-    public Image healthBarFill;
+    public TextMeshProUGUI scoreText;           // text that displays our score
+    public TextMeshProUGUI ammoText;            // text that displays our ammo
+    public Image healthBarFill;                 // the image fill representing the health bar
 
     [Header("Pause Menu")]
-    public GameObject pauseMenu;
+    public GameObject pauseMenu;                // pause menu object
 
     [Header("End Game Screen")]
-    public GameObject endGameScreen;
-    public TextMeshProUGUI endGameHeaderText;
-    public TextMeshProUGUI endGameScoreText;
+    public GameObject endGameScreen;            // end game screen object
+    public TextMeshProUGUI endGameHeaderText;   // end game screen header text
+    public TextMeshProUGUI endGameScoreText;    // end game screen displaying our final score
 
     // instance
     public static GameUI instance;
@@ -30,26 +30,31 @@ public class GameUI : MonoBehaviour
         instance = this;
     }
 
+    // updates the health bar fill
     public void UpdateHealthBar(int curHp, int maxHp)
     {
         healthBarFill.fillAmount = (float)curHp / (float)maxHp;
     }
 
+    // updates the score text to show the current score
     public void UpdateScoreText(int score)
     {
         scoreText.text = "Score: " + score;
     }
 
+    // updates the ammo text
     public void UpdateAmmoText(int curAmmo, int maxAmmo)
     {
         ammoText.text = "Ammo: " + curAmmo + " / " + maxAmmo;
     }
 
+    // enables or disables the pause menu
     public void TogglePauseGame(bool paused)
     {
         pauseMenu.SetActive(paused);
     }
 
+    // activates and sets the end game screen
     public void SetEndGameScreen(bool won, int score)
     {
         endGameScreen.SetActive(true);
