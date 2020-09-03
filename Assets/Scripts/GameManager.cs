@@ -18,6 +18,11 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
+
     void Update()
     {
         if (Input.GetButtonDown("Cancel"))
@@ -28,6 +33,8 @@ public class GameManager : MonoBehaviour
     {
         gamePaused = !gamePaused;
         Time.timeScale = gamePaused == true ? 0.0f : 1.0f;
+
+        Cursor.lockState = gamePaused == true ? CursorLockMode.None : CursorLockMode.Locked;
 
         // toggle the pause menu
         GameUI.instance.TogglePauseGame(gamePaused);
@@ -49,5 +56,19 @@ public class GameManager : MonoBehaviour
     {
         // set the end game screen
         GameUI.instance.SetEndGameScreen(true, curScore);
+
+        Time.timeScale = 0.0f;
+        gamePaused = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void LoseGame()
+    {
+        // set the end game screen
+        GameUI.instance.SetEndGameScreen(false, curScore);
+
+        Time.timeScale = 0.0f;
+        gamePaused = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

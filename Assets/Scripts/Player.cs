@@ -33,8 +33,20 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    void Start()
+    {
+        // initialize the UI
+        GameUI.instance.UpdateHealthBar(curHp, maxHp);
+        GameUI.instance.UpdateScoreText(0);
+        GameUI.instance.UpdateAmmoText(weapon.curAmmo, weapon.maxAmmo);
+    }
+
     void Update()
     {
+        // don't do anything if game is paused
+        if (GameManager.instance.gamePaused == true)
+            return;
+
         Move();
 
         if (Input.GetButtonDown("Jump"))
@@ -103,7 +115,7 @@ public class Player : MonoBehaviour
     // called when our health reaches 0
     void Die()
     {
-
+        GameManager.instance.LoseGame();
     }
 
     // called when the player is given health
